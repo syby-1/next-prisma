@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/@prisma/client/engineering"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("ENGINEERING_DATABASE_URL")
+}
+
+model test_med {
+  id   BigInt  @unique(map: "id") @default(autoincrement()) @db.UnsignedBigInt
+  test String? @db.VarChar(255)
+}
+
+model user {
+  id       Int     @id @default(autoincrement())
+  email    String  @unique(map: "User_email_key")
+  name     String?
+  password String
+}
+
+model chat {
+  id       Int    @id @default(autoincrement())
+  question String
+  answer   String @db.LongText
+}
+
+model nest_test {
+  id   BigInt  @unique(map: "id") @default(autoincrement()) @db.UnsignedBigInt
+  name String? @db.VarChar(255)
+}
