@@ -20,6 +20,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <Script
+          async
           id="googleTag"
           dangerouslySetInnerHTML={{
             __html: `
