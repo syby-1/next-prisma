@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.10.2",
     "@headlessui/react": "^2.0.4",
     "@prisma/client": "^5.15.0",
     "html-react-parser": "^5.1.10",
