@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Provider } from "@/context/themeProvider";
-import Script from "next/script";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <Script
+        {/* <Script
           id="googleTag"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -31,7 +31,8 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-NSKKPP2');
           `,
           }}
-        />
+        /> */}
+        <GoogleTagManager gtmId="GTM-NSKKPP2" />
       </head>
       <body>
         <Provider>{children}</Provider>
