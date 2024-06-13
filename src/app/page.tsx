@@ -1,7 +1,7 @@
-import Image from "next/image";
-import Prisma from "@/../lib/eng.prisma";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
-import parser from 'html-react-parser'
+import Image from 'next/image';
+import Prisma from '@/../lib/eng.prisma';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
+import parser from 'html-react-parser';
 
 export default async function Home() {
   const data = `
@@ -461,7 +461,7 @@ export default async function Home() {
 <div class="preview-paragraph-395 preview-line 395" data_line_start="395" data_line_end="395" data_line="395,396" count_line="1">and so on.</div>
 <div class="preview-paragraph-397 preview-line 397" data_line_start="397" data_line_end="397" data_line="397,398" count_line="1">Now, let us suppose your collection of primes includes all the possible primes. What is your guess about the size of this collection? Does it contain only a finite number of integers, or infinitely many? Infact, there are infinitely many primes. So, if we combine all these primes in all possible ways, we will get an infinite collection of numbers, all the primes and all possible products of primes. The question is - can we produce all the composite numbers this way? What do you think? Do you think that there may be a composite number which is not the product of powers of primes? Before we answer this, let us factorise positive integers, that is, do the opposite of what we have done so far.</div>
 <div class="preview-paragraph-399 preview-line 399" data_line_start="399" data_line_end="399" data_line="399,400" count_line="1">We are going to use the factor tree with which you are all familiar. Let us take some large number, say, 32760, and factorise it as shown.</div>
-<div class="preview-paragraph-401 preview-line 401" data_line_start="401" data_line_end="401" data_line="401,402" count_line="1"><figure style="text-align: center"><img src="https://cdn.mathpix.com/cropped/2024_05_27_f54493fc8306b6d8f4c9g-016.jpg?height=1023&amp;width=870&amp;top_left_y=1187&amp;top_left_x=643" alt="" data-align="center"></figure></div>
+<div class="preview-paragraph-401 preview-line 401" data_line_start="401" data_line_end="401" data_line="401,402" count_line="1"><figure style="text-align: center"><img style="width: 300px; height: 300px;" src="https://cdn.mathpix.com/cropped/2024_05_27_f54493fc8306b6d8f4c9g-016.jpg?height=1023&amp;width=870&amp;top_left_y=1187&amp;top_left_x=643" alt="" data-align="center"></figure></div>
 <div class="preview-paragraph-403 preview-line 403" data_line_start="403" data_line_end="403" data_line="403,404" count_line="1">So we have factorised 32760 as <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mo>&#xD7;</mo>
@@ -564,7 +564,7 @@ export default async function Home() {
 <div class="preview-paragraph-405 preview-line 405" data_line_start="405" data_line_end="405" data_line="405,406" count_line="1">Theorem 1.1 (Fundamental Theorem of Arithmetic) : Every composite number can be expressed (factorised) as a product of primes, and this factorisation is unique, apart from the order in which the prime factors occur.</div>
 <div class="preview-paragraph-407 preview-line 407" data_line_start="407" data_line_end="407" data_line="407,408" count_line="1">An equivalent version of Theorem 1.2 was probably first recorded as Proposition 14 of Book IX in Euclid's Elements, before it came to be known as the Fundamental Theorem of Arithmetic. However, the first correct proof was given by Carl Friedrich Gauss in his Disquisitiones Arithmeticae.</div>
 <div class="preview-paragraph-409 preview-line 409" data_line_start="409" data_line_end="409" data_line="409,410" count_line="1">Carl Friedrich Gauss is often referred to as the 'Prince of Mathematicians' and is considered one of the three greatest mathematicians of all time, along with Archimedes and Newton. He has made fundamental contributions to both mathematics and science.</div>
-<div class="preview-paragraph-411 preview-line 411" data_line_start="411" data_line_end="411" data_line="411,412" count_line="1"><figure style="text-align: center"><img src="https://cdn.mathpix.com/cropped/2024_05_27_f54493fc8306b6d8f4c9g-017.jpg?height=558&amp;width=390&amp;top_left_y=891&amp;top_left_x=1123" alt="" data-align="center"></figure></div>
+<div class="preview-paragraph-411 preview-line 411" data_line_start="411" data_line_end="411" data_line="411,412" count_line="1"><figure style="text-align: center"><img style="width: 300px; height: 300px;" src="https://cdn.mathpix.com/cropped/2024_05_27_f54493fc8306b6d8f4c9g-017.jpg?height=558&amp;width=390&amp;top_left_y=891&amp;top_left_x=1123" alt="" data-align="center"></figure></div>
 <div class="preview-paragraph-413 preview-line 413" data_line_start="413" data_line_end="413" data_line="413,414" count_line="1">The Fundamental Theorem of Arithmetic says that every composite number can be factorised as a product of primes. Actually it says more. It says that given any composite number it can be factorised as a product of prime numbers in a 'unique' way, except for the order in which the primes occur. That is, given any composite number there is one and only one way to write it as a product of primes, as long as we are not particular about the order in which the primes occur. So, for example, we regard <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mo>&#xD7;</mo>
@@ -2613,10 +2613,8 @@ same point and at the same time, and go in the same direction. After how many mi
     </div>
   </div>`;
 
-
-
   return (
-    <main >
+    <main>
       <ThemeSwitcher />
       <p className="text-blue-800 dark:text-red-800">test</p>
       <span className="text-black-800 dark:text-red-800">{parser(data)}</span>
