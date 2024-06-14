@@ -22,21 +22,23 @@ export default function RootLayout({
       <body>
         <Provider>{children}</Provider>
         <Script
-        id='gTag'
-        async
-        strategy='afterInteractive'
+          id="gTag"
+          async
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-      setTimeout(function() {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GTM-NSKKPP2');
-
-        // Additional event pushed after GTM initialization
-        dataLayer.push({'event': 'afterLoad'});
-      }, 0);
-    `,
+            setTimeout(function() {
+                (function() {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'GTM-NSKKPP2');
+                    
+                    // Additional event pushed after GTM initialization
+                    dataLayer.push({'event': 'afterLoad'});
+                })();
+            }, 1500);
+        `,
           }}
         ></Script>
       </body>
