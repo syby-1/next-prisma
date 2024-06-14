@@ -1,8 +1,8 @@
+'use client'
 import type { Metadata } from 'next';
 import './globals.css';
 import { Provider } from '@/context/themeProvider';
-import Script from 'next/script';
-import Head from 'next/head';
+import { useEffect } from 'react';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,26 +14,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      (function (w : any, d : any, s : any, l : any, i : any) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.defer = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-NSKKPP2');
+    }, 1500);
+
+    // Cleanup function to clear the timeout if the component unmounts
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <html lang="en" suppressHydrationWarning>
-      <Head>
-        <link rel="stylesheet" href="" />
-      </Head>
       <body>
         <Provider>{children}</Provider>
-          <Script defer id="googleTag" strategy="lazyOnload">{`
-      setTimeout(function() {
-          (function(w,d,s,l,i){
-              w[l]=w[l]||[];
-              w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-              var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-              j.defer=true;
-              j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-              f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-NSKKPP2');
-      }, 1500);
-  `}</Script>
       </body>
     </html>
   );
