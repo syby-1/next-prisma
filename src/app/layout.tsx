@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import type { Metadata } from 'next';
 import './globals.css';
 import { Provider } from '@/context/themeProvider';
@@ -15,11 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.defer = true;
-    script.id = 'googleTag';
-    script.innerHTML = `
-        setTimeout(function() {
+    setTimeout(() => {
+      const script = document.createElement('script');
+      script.defer = true;
+      script.id = 'googleTag';
+      script.innerHTML = `
             (function(w,d,s,l,i){
                 w[l]=w[l]||[];
                 w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
@@ -29,15 +29,15 @@ export default function RootLayout({
                 j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
                 f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-NSKKPP2');
-        }, 1500);
     `;
-    document.head.appendChild(script);
+      document.head.appendChild(script);
 
-    return () => {
+      return () => {
         // Clean up the script element if the component unmounts
         document.head.removeChild(script);
-    };
-}, []);
+      };
+    }, 1500);
+  }, []);
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
