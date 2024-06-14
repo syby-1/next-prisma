@@ -474,9 +474,19 @@ export default async function Home() {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: 'next-prisma',
-    description: 'This is for testing',
+    '@type': 'Organization',
+    name: 'Collegesuggest',
+    url: 'https://collegesuggest.com',
+    description:
+      'Search with Confidence for Colleges & Courses Backed by Verified Data on Placements, Median Salary,Career Outcomes, Diversity, Faculty Excellence, and More.',
+    email: 'digital@collegesuggest.com',
+    sameAs: [
+      'https://www.facebook.com/CollegeSuggestIndia',
+      'https://x.com/i/flow/login?redirect_after_login=%2Fsuggestcollege',
+      'https://www.instagram.com/collegesuggestindia/?igshid=YmMyMTA2M2Y%3D',
+      'https://www.youtube.com/@CollegeSuggest',
+      'https://in.linkedin.com/company/college-suggest-india'
+    ]
   };
 
   return (
