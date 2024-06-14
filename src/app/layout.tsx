@@ -22,7 +22,9 @@ export default function RootLayout({
       <body>
         <Provider>{children}</Provider>
         <Script
-          id="googleTag"
+        id='gTag'
+        async
+        strategy='afterInteractive'
           dangerouslySetInnerHTML={{
             __html: `
       setTimeout(function() {
@@ -30,8 +32,10 @@ export default function RootLayout({
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'GTM-NSKKPP2');
+
+        // Additional event pushed after GTM initialization
         dataLayer.push({'event': 'afterLoad'});
-      }, 1500);
+      }, 0);
     `,
           }}
         ></Script>
