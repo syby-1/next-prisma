@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Prisma from '@/../lib/eng.prisma';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
 import parser from 'html-react-parser';
-import GoogleTag from '@/components/script/gtm';
 
 export default async function Home() {
   const data = `
@@ -474,7 +473,6 @@ export default async function Home() {
       <p className="text-blue-800 dark:text-red-800">test</p>
       <span className="text-black-800 dark:text-red-800">{parser(data)}</span>
       <p>hi</p>
-      <GoogleTag />
     </main>
   );
 }
